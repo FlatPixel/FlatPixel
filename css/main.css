@@ -419,19 +419,19 @@ main#Home #Showreel img {
   border-radius: 100%;
   width: 100%;
   height: auto;
+  aspect-ratio: 1/1;
   border: solid 10px white;
   top: 0;
   left: 0;
   z-index: 1;
   opacity: 1;
-  animation: 1.5s ease 0s normal forwards 1 fadeout;
-  animation-delay: 1.5s;
 }
 main#Home #Showreel video {
   border-radius: 100%;
   border: solid 10px white;
   width: 100%;
   height: auto;
+  aspect-ratio: 1/1;
 }
 @media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 790px) {
   main#Home #Showreel video {

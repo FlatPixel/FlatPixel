@@ -597,6 +597,7 @@ main#Home {
             border-radius: 100%;
             width: 100%;
             height: auto;
+            aspect-ratio: 1/1;
 
             border: solid 10px white;
 
@@ -606,8 +607,8 @@ main#Home {
             z-index: 1;
             opacity: 1;
 
-            animation: 1.5s ease 0s normal forwards 1 fadeout;
-            animation-delay: 1.5s;
+            // animation: 1.5s ease 0s normal forwards 1 fadeout;
+            // animation-delay: 1.5s;
         }
 
         video {
@@ -615,6 +616,7 @@ main#Home {
             border: solid 10px white;
             width: 100%;
             height: auto;
+            aspect-ratio: 1/1;
 
             @include for-mobile-only() {
                 border: solid 8px white;
