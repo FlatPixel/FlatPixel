@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" data-scroll='0'>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+	<meta http-equiv="ScreenOrientation" content="autoRotate:disabled" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>
+		Flat Pixel - An Augmented Reality Game studio based in Paris!
+	</title>
+	<meta name="description" content="We make augmented reality games. Our studio is based in Paris." />
+	<meta property="og:title" content="Flat Pixel - Games studio" />
+	<meta property="og:description" content="We make games & augmented reality. Our studio is based in Paris." />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="http://www.flatpixel.fr/" />
+	<meta property="og:image" content="images/FPlogo.png" />
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-MLJCMMWX98"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'G-MLJCMMWX98');
+	</script>
+	<link rel="icon" type="image/png" href="favicon.ico" />
+	<link href="https://fonts.googleapis.com/css?family=Alata&display=swap" rel="stylesheet" defer />
+	<link rel="stylesheet" href="css/main.css" type="text/css" />
+</head>
+
+<body>
+	<!-- ThreeJS Rendering -->
+	<!-- <canvas id="canvas"></canvas>
+		<video id="video" playsinline webkit-playsinline muted loop autoplay width="320" height="240"
+		src="./videos/bball-1.mp4" style="display: none;"></video>
+		<script type="module" src="js/main.js"></script> -->
+	<!-- Navigation -->
+	<nav id="main-nav">
+		<div class="vignette"></div>
+		<a id="Logo" href="./index.html"><img src="./images/logo.png" alt="Logo"><span>Flat Pixel</span></a>
+		<input class="menu-btn" type="checkbox" id="menu-btn" />
+		<label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+		<ul>
+			<li id="btnHome"><a class="active" href="./index.html">home</a></li>
+			<li id="btnServices"><a href="./services.html">services</a></li>
+			<li id="btnProjects"><a href="./projects.html">gallery</a></li>
+			<li id="btnAbout"><a href="./about.html">about</a></li>
+			<li id="btnContact"><a href="./contact.html">contact</a></li>
+		</ul>
+	</nav>
+	<!-- Main -->
+	<main id="Home">
+		<section id="Showreel">
+			<img src="./images/FPlogo_showreel_pink.png" alt="Logo Showreel">
+			<video id="video" poster="./images/logo_showreel.png" playsinline webkit-playsinline muted loop autoplay
+				preload="auto" src="./videos/Showreel.mp4"></video>
+		</section>
+		<section id="Blahblah">
+			<h2>The future, enhanced</h2>
+			<p>We offer handcrafted Games & Augmented Reality experiences. Let us bring your project to life!
+			</p>
+			<a id="Estimate" href="./services.html">Get started</a>
+		</section>
+	</main>
+	<!-- Footer -->
+	<footer>
+		<ul>
+			<li><a href="https://fr.linkedin.com/company/flatpixel" target="_blank" rel="noopener noreferrer"
+					class="social linkedin">Linked In</a></li>
+			<li><a href="https://www.twitter.com/Flat_Pixel" target="_blank" rel="noopener noreferrer"
+					class="social twitter">
+					Twitter
+				</a></li>
+			<li><a href="https://www.snapchat.com/add/flatpixel" target="_blank" rel="noopener noreferrer"
+					class="social snapchat">
+					Snapchat
+				</a></li>
+			<li><a href="https://www.instagram.com/flat_pixel" target="_blank" rel="noopener noreferrer"
+					class="social instagram">
+					Instagram
+				</a></li>
+		</ul>
+	</footer>
+	<!-- Scripts -->
+	<script type="module" src="js/storeScroll.js"></script>
+</body>
+
+</html>

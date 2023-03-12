@@ -1,0 +1,1198 @@
+@charset "UTF-8";
+@-o-viewport {
+  width: device-width;
+  /* largeur du viewport */
+  zoom: 1;
+  /* zoom initial à 1.0 (et clin d'oeil aux fans d'IE6/7) */
+}
+@viewport {
+  width: device-width;
+  /* largeur du viewport */
+  zoom: 1;
+  /* zoom initial à 1.0 (et clin d'oeil aux fans d'IE6/7) */
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: white;
+  text-decoration: none;
+  outline: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+@font-face {
+  font-family: "montserrat-black";
+  src: url("../fonts/Montserrat/webfonts/Montserrat-Black.woff") format("woff");
+}
+@font-face {
+  font-family: "montserrat-regular";
+  src: url("../fonts/Montserrat/webfonts/Montserrat-SemiBold.woff") format("woff");
+}
+h1 {
+  font-family: "montserrat-black", sans-serif;
+  font-size: 2.5em;
+  line-height: 1em;
+}
+
+::-moz-placeholder {
+  color: #ffbbbb;
+}
+
+::placeholder {
+  color: #ffbbbb;
+}
+
+body {
+  background-color: #ff6b6a;
+  font-family: "montserrat-regular", sans-serif;
+  display: grid;
+  width: 100vw;
+  min-height: 100vh;
+  grid-template-columns: minmax(60px, 10vw) 1fr minmax(60px, 10vw);
+  grid-template-rows: max(10vh, 60px) 1fr max(10vh, 60px);
+}
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 790px) {
+  body {
+    padding: 3vw;
+    margin-bottom: 10px;
+  }
+}
+
+.vignette {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, transparent 80%, rgb(113, 0, 0) 175%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+#Logo {
+  grid-row: 1;
+  font-family: "montserrat-black", sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  color: #ffbbbb;
+  overflow: hidden;
+  font-size: 3.3em;
+  line-height: 50px;
+  z-index: 20;
+}
+#Logo * {
+  margin-right: 15px;
+}
+#Logo:hover {
+  text-decoration: underline;
+}
+#Logo.active {
+  color: #ff6b6a;
+}
+#Logo img {
+  display: inline-flex;
+  position: relative;
+  width: auto;
+  height: 100%;
+  max-width: 150px;
+  max-height: 150px;
+}
+#Logo span {
+  display: none;
+}
+@media screen and (min-width: calc(1200px + 1px)) {
+  #Logo span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    text-align: center;
+    position: relative;
+    width: auto;
+    height: inherit;
+  }
+}
+
+html:not([data-scroll="0"]) nav {
+  box-shadow: 0 0 0.5em rgba(138, 0, 23, 0.25);
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  width: 100vw;
+  height: max(80px, 10vh);
+  padding: 10px min(60px, 5vw);
+  font-family: "montserrat-black", sans-serif;
+  background-color: #ff6b6a;
+  z-index: 10;
+}
+@media screen and (min-width: calc(810px + 1px)) and (min-height: calc(790px + 1px)) {
+  nav ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+  }
+  nav ul li {
+    width: auto;
+    max-width: 160px;
+    height: 45px;
+    align-items: center;
+    overflow: hidden;
+  }
+  nav ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    color: white;
+    overflow: hidden;
+    font-size: 1.75em;
+  }
+  nav ul li a:hover {
+    opacity: 75%;
+  }
+  nav ul li a.active {
+    opacity: 50%;
+  }
+  nav ul #btnHome {
+    display: none;
+  }
+  nav ul #btnContact a {
+    min-width: 160px;
+    border: white solid 5px;
+    border-radius: 100px;
+  }
+  nav ul #btnContact.active {
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+}
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 790px) {
+  nav ul {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    z-index: 10;
+    background-color: rgba(255, 107, 106, 0.5);
+    -webkit-backdrop-filter: blur(100px);
+            backdrop-filter: blur(100px);
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.25);
+    /* to stop flickering of text in safari */
+    -webkit-font-smoothing: antialiased;
+    transform-origin: 0% 0%;
+    transform: translate(100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  }
+}
+@media screen and (orientation: portrait) and (max-width: 810px) and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 790px) and (orientation: portrait) and (max-width: 810px) {
+  nav ul {
+    gap: 30px;
+  }
+}
+@media screen and (orientation: portrait) and (max-width: 810px) and (orientation: landscape) and (max-height: 790px), screen and (orientation: landscape) and (max-height: 790px) and (orientation: landscape) and (max-height: 790px) {
+  nav ul {
+    gap: 15px;
+  }
+}
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 790px) {
+  nav ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    text-align: center;
+    width: 100%;
+    height: 45px;
+    min-height: 45px;
+    align-items: center;
+    overflow: hidden;
+  }
+  nav ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    color: white;
+    overflow: hidden;
+    font-size: 1.75em;
+    text-transform: capitalize;
+  }
+  nav ul li a:hover {
+    opacity: 75%;
+  }
+  nav ul li a.active {
+    opacity: 50%;
+  }
+}
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 790px) {
+  nav ul #btnContact a {
+    min-width: 160px;
+    max-width: 160px;
+    border: white solid 5px;
+    border-radius: 100px;
+  }
+  nav ul #btnContact.active {
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+}
+nav .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  padding: 25px 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  z-index: 99;
+}
+nav .menu-icon .navicon {
+  background: white;
+  display: block;
+  height: 7px;
+  position: relative;
+  transition: background 0.2s ease-out;
+  width: 40px;
+  border-radius: 5px;
+}
+nav .menu-icon .navicon:before, nav .menu-icon .navicon:after {
+  background: white;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+  border-radius: 5px;
+}
+nav .menu-icon .navicon:before {
+  top: 11px;
+}
+nav .menu-icon .navicon:after {
+  top: -11px;
+}
+nav .menu-btn {
+  display: none;
+}
+nav .menu-btn:checked ~ ul {
+  transform: translate(0%, 0);
+}
+nav .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+nav .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+nav .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+nav .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before, nav .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+@media screen and (min-width: calc(810px + 1px)) and (min-height: calc(790px + 1px)) {
+  nav .menu-icon {
+    display: none;
+  }
+}
+
+main#Home {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  width: 100%;
+  max-width: 2048px;
+  height: 100%;
+  grid-row: 2;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  margin: 0;
+  padding: 25px 0;
+  align-self: center;
+  justify-self: center;
+}
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 790px) {
+  main#Home {
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content 1fr;
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+}
+main#Home #Blahblah {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 25px;
+  width: 100%;
+  height: auto;
+  min-height: 500px;
+  align-self: center;
+  justify-self: center;
+  grid-row: 1;
+  grid-column: 1;
+  padding: 0 15px;
+}
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 790px) {
+  main#Home #Blahblah {
+    grid-row: 2;
+    align-items: center;
+    align-self: start;
+    justify-self: left;
+    padding: 25px 0 0 0;
+    min-height: auto;
+  }
+}
+main#Home h2 {
+  font-family: "montserrat-black", sans-serif;
+  font-size: 4em;
+  line-height: 0.85em;
+  width: 100%;
+}
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 790px) {
+  main#Home h2 {
+    font-size: 2.3em;
+    line-height: 1.25em;
+    padding: 0 15px;
+  }
+}
+main#Home #Showreel {
+  position: relative;
+  display: block;
+  max-width: 1080px;
+  width: 100%;
+  height: auto;
+  grid-row: 1;
+  grid-column: 2;
+  align-self: center;
+  justify-self: center;
+}
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 790px) {
+  main#Home #Showreel {
+    grid-column: 1;
+  }
+}
+main#Home #Showreel img {
+  display: block;
+  position: absolute;
+  border-radius: 100%;
+  width: 100%;
+  height: auto;
+  border: solid 10px white;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 1;
+  animation: 1.5s ease 0s normal forwards 1 fadeout;
+  animation-delay: 1.5s;
+}
+main#Home #Showreel video {
+  border-radius: 100%;
+  border: solid 10px white;
+  width: 100%;
+  height: auto;
+}
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 790px) {
+  main#Home #Showreel video {
+    border: solid 8px white;
+  }
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  66% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeout {
+  100% {
+    opacity: 0;
+  }
+  66% {
+    opacity: 0;
+  }
+  0% {
+    opacity: 1;
+  }
+}
+main#Home p {
+  font-family: "montserrat-regular", sans-serif;
+  font-size: 1.25em;
+  line-height: 1em;
+  width: 100%;
+}
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 790px) {
+  main#Home p {
+    padding: 0 15px;
+  }
+}
+main#Home a#Estimate {
+  display: block;
+  font-family: "montserrat-black", sans-serif;
+  font-size: 1.5em;
+  position: relative;
+  border: white solid 0.25em;
+  border-radius: 999em 999em 999em 999em;
+  padding: 5px 25px;
+}
+main#Home a#Estimate:hover {
+  opacity: 75%;
+}
+
+main#Services {
+  width: 100%;
+  height: auto;
+  grid-row: 2;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  padding: 0 0 25px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 790px) {
+  main#Services {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    padding: 50px 0 25px 0;
+  }
+}
+main#Services h1 {
+  font-family: "montserrat-black", sans-serif;
+  font-size: 2.7em;
+  text-align: center;
+}
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 790px) {
+  main#Services h1 {
+    font-size: 1.75em;
+    line-height: 1.25em;
+  }
+}
+main#Services #Cards {
+  min-height: 400px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 790px) {
+  main#Services #Cards {
+    flex-direction: column;
+    justify-content: start;
+  }
+}
+main#Services .card:not(:empty):hover,
+main#Services .card:not(:empty):focus {
+  z-index: 1;
+  color: #fff;
+  opacity: 1;
+  transform: scale(1.05) rotateZ(2deg);
+  cursor: pointer;
+}
+main#Services .card:not(:empty):hover:after,
+main#Services .card:not(:empty):focus:after {
+  opacity: 1;
+}
+main#Services .card:not(:empty):hover:before,
+main#Services .card:not(:empty):focus:before {
+  opacity: 0;
+}
+main#Services .card {
+  position: relative;
+  min-width: 280px;
+  min-height: 380px;
+  width: 300px;
+  height: 400px;
+  background: #fff;
+  border-radius: 35px;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.25);
+  transition: all 0.4s cubic-bezier(0.33, 1, 0.68, 1);
+  transition-property: background, transform, color, opacity;
+}
+main#Services .card a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 0 30px;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+main#Services .card a h2 {
+  font-family: "montserrat-black", sans-serif;
+  font-size: 1.75em;
+}
+main#Services .card a p {
+  font-family: "montserrat-regular", sans-serif;
+  font-size: 1em;
+}
+main#Services .card a .icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  min-height: 75px;
+}
+main#Services .card a .icons .icon {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  font-size: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+main#Services .card a .icons .instagram {
+  background-image: url("../images/services/icon_insta.png");
+}
+main#Services .card a .icons .snapchat {
+  background-image: url("../images/services/icon_snapChat.png");
+}
+main#Services .card a .icons .tiktok {
+  background-image: url("../images/services/icon_tikTok.png");
+}
+main#Services .card a .icons .unity {
+  background-image: url("../images/services/icon_Unity.png");
+}
+main#Services .card a .icons .eightwall {
+  background-image: url("../images/services/icon_8thWall.png");
+}
+main#Services .card a .icons .lightship {
+  background-image: url("../images/services/icon_lightShip.png");
+}
+main#Services .card * {
+  color: #ff6b6a;
+}
+
+main#Projects {
+  grid-row: 2;
+  grid-column: 2/3;
+  margin: 0;
+  padding-bottom: 25px;
+  padding-top: 75px;
+  justify-self: center;
+}
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 790px) {
+  main#Projects {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    padding-top: 0;
+  }
+}
+main#Projects .gallery {
+  display: flex;
+  padding: 2px;
+  transition: 0.3s;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+}
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 790px), (hover: none) {
+  main#Projects .gallery {
+    flex-direction: column;
+    max-width: 550px;
+  }
+}
+@media (hover: hover) {
+  main#Projects .gallery:hover .gallery__image, main#Projects .gallery:hover .gallery__video {
+    filter: grayscale(1);
+  }
+}
+main#Projects .gallery__column {
+  display: flex;
+  width: 33%;
+  flex-direction: column;
+}
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 790px), (hover: none) {
+  main#Projects .gallery__column {
+    width: 100%;
+  }
+}
+main#Projects .gallery__link {
+  margin: 10px;
+  overflow: hidden;
+  border: white 8px solid;
+  border-radius: 3px;
+}
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 790px) {
+  main#Projects .gallery__link {
+    max-width: 70vh;
+    border: white 7px solid;
+  }
+}
+main#Projects .gallery__link:hover .gallery__image,
+main#Projects .gallery__link:hover .gallery__video {
+  filter: grayscale(0);
+}
+main#Projects .gallery__link:hover .gallery__caption {
+  opacity: 1;
+}
+main#Projects .gallery__thumb {
+  position: relative;
+}
+main#Projects .gallery__image, main#Projects .gallery__video {
+  display: block;
+  width: 100%;
+  transition: 0.3s;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main#Projects .gallery__image:hover, main#Projects .gallery__video:hover {
+  transform: scale(1.05);
+}
+main#Projects .gallery__caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 25px 15px 15px;
+  width: 100%;
+  font-family: "montserrat-regular", sans-serif;
+  font-size: 16px;
+  color: white;
+  opacity: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
+  transition: 0.3s;
+}
+
+main#About {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  grid-row: 2;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  align-content: center;
+  align-self: center;
+  padding-bottom: 25px;
+}
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 790px) {
+  main#About {
+    flex-direction: column;
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+}
+main#About #Presentation {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 35px;
+  flex-wrap: wrap;
+}
+@media screen and (min-width: calc(810px + 1px)) and (min-height: calc(790px + 1px)) {
+  main#About #Presentation {
+    flex: 1 1 700px;
+    max-width: 700px;
+    justify-content: center;
+  }
+}
+main#About #Presentation p {
+  font-family: "montserrat-regular", sans-serif;
+  font-size: 1.2em;
+}
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 790px) {
+  main#About #Presentation p {
+    padding: 0 15px;
+  }
+}
+main#About #TeamPhoto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex: 2 0 300px;
+  max-width: 450px;
+  min-width: 300px;
+  margin-top: 25px;
+}
+main#About #TeamPhoto img {
+  width: 100%;
+  border-radius: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 1/1;
+  border: solid 5px white;
+}
+
+main#Contact {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  grid-row: 2;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  margin: 0 auto;
+  padding: 25px 0;
+  font-family: "montserrat-regular", sans-serif;
+  align-self: center;
+  justify-self: center;
+  /* Style the form */
+  /* Style the input fields */
+  /* This approximates the ease-in-out-bounce animation from easings.net, which would require a plug-in to use*/
+  /* Mark input boxes that gets an error on validation: */
+  /* Hide all steps by default: */
+  /* Make circles that indicate the steps of the form: */
+  /* Mark the active step: */
+  /* Mark the steps that are finished and valid: */
+}
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 790px) {
+  main#Contact {
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+}
+main#Contact form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  gap: 25px;
+  margin: 0 auto;
+  width: 100%;
+  min-width: 300px;
+  max-width: 620px;
+}
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 790px) {
+  main#Contact form {
+    padding: 5px;
+  }
+}
+main#Contact legend {
+  font-family: "montserrat-black", sans-serif;
+  font-size: 1.3em;
+}
+main#Contact textarea {
+  background: #fff;
+  color: #ff6b6a;
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 1px solid #d1d1d1;
+  box-shadow: inset 0px 1px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  resize: none;
+  font-size: 1.5em;
+  line-height: 1.45;
+  outline: none;
+  padding: 0.6em 1.45em 0.7em;
+  transition: 0.18s ease-out;
+}
+main#Contact textarea:hover {
+  box-shadow: inset 1px 2px 8px rgba(0, 0, 0, 0.02);
+}
+main#Contact textarea:focus {
+  border: 1px solid #B8B6B6;
+  box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.01), 0px 0px 8px rgba(0, 0, 0, 0.2);
+}
+main#Contact input[type=text], main#Contact input[type=email] {
+  border-radius: 99px;
+  padding: 10px;
+  width: 100%;
+  min-height: 50px;
+  font-size: 17px;
+}
+main#Contact input[type=text], main#Contact input[type=email] {
+  width: 100%;
+  background: #fff;
+  color: #ff6b6a;
+  border: 1px solid #d1d1d1;
+  box-shadow: inset 0px 1px 8px rgba(0, 0, 0, 0.2);
+  font-family: inherit;
+  font-size: 1em;
+  line-height: 1.45;
+  outline: none;
+  padding: 0.6em 1.45em 0.7em;
+  transition: 0.18s ease-out;
+}
+main#Contact input[type=text]:hover, main#Contact input[type=email]:hover {
+  box-shadow: inset 1px 2px 8px rgba(0, 0, 0, 0.02);
+}
+main#Contact input[type=text]:focus, main#Contact input[type=email]:focus {
+  box-shadow: inset 0px 1px 8px rgba(0, 0, 0, 0.2);
+}
+@keyframes bounce {
+  0% {
+    transform: translateX(0px);
+    timing-function: ease-in;
+  }
+  37% {
+    transform: translateX(5px);
+    timing-function: ease-out;
+  }
+  55% {
+    transform: translateX(-5px);
+    timing-function: ease-in;
+  }
+  73% {
+    transform: translateX(4px);
+    timing-function: ease-out;
+  }
+  82% {
+    transform: translateX(-4px);
+    timing-function: ease-in;
+  }
+  91% {
+    transform: translateX(2px);
+    timing-function: ease-out;
+  }
+  96% {
+    transform: translateX(-2px);
+    timing-function: ease-in;
+  }
+  100% {
+    transform: translateX(0px);
+    timing-function: ease-in;
+  }
+}
+main#Contact #my-form-status {
+  display: none;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  vertical-align: middle;
+  min-height: 50px;
+  text-align: center;
+  border-left: solid 5px black;
+  border-radius: 100px;
+  width: 75%;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 5px;
+  color: #ff6b6a;
+}
+main#Contact #my-form-status.error {
+  display: flex;
+  border-left: solid 25px #fff4ad;
+}
+main#Contact #my-form-status.success {
+  display: flex;
+  border-left: solid 25px #b2ffbd;
+}
+main#Contact .invalid,
+main#Contact input.invalid {
+  outline: 0;
+  border: 4px solid #ffbbbb;
+  animation-name: bounce;
+  animation-duration: 0.5s;
+  animation-delay: 0.25s;
+}
+main#Contact .form-step {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+}
+main#Contact .form-step h2 {
+  text-align: center;
+  font-family: "montserrat-black", sans-serif;
+  font-size: 2.5em;
+  line-height: 0.85em;
+}
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 790px) {
+  main#Contact .form-step h2 {
+    font-size: 1.75em;
+    line-height: 1.25em;
+  }
+}
+main#Contact .contact-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+main#Contact .contact-details input[type=text],
+main#Contact .contact-details input[type=email] {
+  width: 75%;
+}
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 790px) {
+  main#Contact .contact-details input[type=text],
+  main#Contact .contact-details input[type=email] {
+    width: 90%;
+  }
+}
+main#Contact input[type=radio],
+main#Contact input[type=checkbox] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  /* For iOS < 15 to remove gradient background */
+  background-color: #fff;
+  /* Not removed via appearance */
+  margin: 0;
+  font: inherit;
+  background-color: #ff6b6a;
+  border-color: white;
+  width: 20px;
+  min-width: 20px;
+  height: 20px;
+  min-height: 20px;
+  border: 2px solid white;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  background-image: none;
+  background-size: contain;
+}
+main#Contact input[type=radio]:hover,
+main#Contact input[type=checkbox]:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+main#Contact input[type=radio]:hover:checked,
+main#Contact input[type=checkbox]:hover:checked {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+main#Contact input[type=radio]:checked,
+main#Contact input[type=checkbox]:checked {
+  background-image: url(../images/check.png);
+}
+main#Contact input[type=radio]:active,
+main#Contact input[type=checkbox]:active {
+  background-color: #ff6b6a;
+}
+main#Contact input[type=radio]:active:checked,
+main#Contact input[type=checkbox]:active:checked {
+  background-image: url(../images/check.png);
+}
+main#Contact fieldset {
+  border: none;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px 0;
+}
+main#Contact fieldset label {
+  display: flex;
+  flex-basis: calc(50% - 10px);
+  margin: 5px;
+  position: relative;
+  vertical-align: middle;
+  gap: 7px;
+}
+main#Contact .buttons {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 25px;
+  flex-wrap: wrap-reverse;
+}
+main#Contact button {
+  min-width: 180px;
+  border: white solid 5px;
+  border-radius: 100px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  text-align: center;
+  height: 100%;
+  color: white;
+  font-size: 1.75em;
+  background-color: #ff6b6a;
+  font-family: "montserrat-black", sans-serif;
+  overflow: hidden;
+  padding: 3px 15px;
+}
+main#Contact button:active {
+  color: #ff6b6a;
+  background-color: white;
+}
+main#Contact button::before,
+main#Contact button::after {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 100%;
+}
+main#Contact button:after {
+  left: -100%;
+  -webkit-clip-path: polygon(10% 0, 70% 0, 90% 100%, 30% 100%);
+          clip-path: polygon(10% 0, 70% 0, 90% 100%, 30% 100%);
+  background-color: rgba(255, 255, 255, 0.6);
+  transition: all 300ms ease;
+}
+main#Contact button:hover::after {
+  left: 100%;
+}
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 790px) {
+  main#Contact #PreviousBtn {
+    opacity: 0.75;
+  }
+}
+main#Contact .steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+main#Contact .step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+main#Contact .step.active,
+main#Contact .form-stepper-active {
+  opacity: 1;
+}
+main#Contact .step.finish,
+main#Contact .form-stepper-completed {
+  background-color: white;
+  opacity: 1;
+}
+main#Contact .d-none {
+  display: none;
+}
+
+@media screen and (min-width: calc(810px + 1px)) and (min-height: calc(790px + 1px)) {
+  footer {
+    position: fixed;
+    width: max(60px, 10vw);
+    height: 100%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+}
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 790px) {
+  footer {
+    position: relative;
+    width: 100%;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row: 3;
+    padding: 0 10px;
+  }
+}
+footer ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+@media screen and (min-width: calc(810px + 1px)) and (min-height: calc(790px + 1px)) {
+  footer ul {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 790px) {
+  footer ul {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+footer ul li {
+  width: 50px;
+  height: 50px;
+  align-items: center;
+  overflow: hidden;
+}
+footer ul li a {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  font-size: 2em;
+  line-height: 50px;
+  cursor: pointer;
+  opacity: 50%;
+}
+footer ul li a:hover {
+  opacity: 100%;
+  transition: 0.2s ease-in-out;
+}
+footer a.social {
+  overflow: hidden;
+  min-width: 0;
+  min-height: 0;
+  font-size: 0;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+footer .linkedin {
+  background-size: contain;
+  background-image: url("../images/socials/linkedin.png");
+}
+footer .twitter {
+  background-size: contain;
+  background-image: url("../images/socials/twitter.png");
+}
+footer .snapchat {
+  background-size: contain;
+  background-image: url("../images/socials/snapchat.png");
+}
+footer .instagram {
+  background-size: contain;
+  background-image: url("../images/socials/instagram.png");
+}/*# sourceMappingURL=main.css.map */

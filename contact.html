@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" data-scroll='0'>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+	<meta http-equiv="ScreenOrientation" content="autoRotate:disabled" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>
+		Flat Pixel - An Augmented Reality Game studio based in Paris!
+	</title>
+	<meta name="description" content="We make augmented reality games. Our studio is based in Paris." />
+	<meta property="og:title" content="Flat Pixel - Games studio" />
+	<meta property="og:description" content="We make games & augmented reality. Our studio is based in Paris." />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="http://www.flatpixel.fr/" />
+	<meta property="og:image" content="images/FPlogo.png" />
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-MLJCMMWX98"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'G-MLJCMMWX98');
+	</script>
+	<link rel="icon" type="image/png" href="favicon.ico" />
+	<link href="https://fonts.googleapis.com/css?family=Alata&display=swap" rel="stylesheet" defer />
+	<link rel="stylesheet" href="css/main.css" type="text/css" />
+
+	<!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
+	<!-- <style>
+		.grecaptcha-badge {
+			display: none;
+		}
+	</style> -->
+</head>
+
+<body>
+	<!-- Navigation -->
+	<nav id="main-nav">
+		<div class="vignette"></div>
+		<a id="Logo" href="./index.html"><img src="./images/logo.png" alt="Logo"><span>Flat Pixel</span></a>
+		<input class="menu-btn" type="checkbox" id="menu-btn" />
+		<label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+		<ul>
+			<li id="btnHome"><a href="./index.html">home</a></li>
+			<li id="btnServices"><a href="./services.html">services</a></li>
+			<li id="btnProjects"><a href="./projects.html">gallery</a></li>
+			<li id="btnAbout"><a href="./about.html">about</a></li>
+			<li id="btnContact"><a class="active" href="./contact.html">contact</a></li>
+		</ul>
+	</nav>
+	<!-- Main -->
+	<main id="Contact">
+		<form id="invisible-recaptcha-form" action="https://formspree.io/f/moqzellv" method="POST">
+			<!-- One "tab" for each step in the form: -->
+			<section id="step-1" class="form-step">
+				<textarea placeholder="Tell us about your project..." name="message"
+					oninput="this.className = ''"></textarea>
+				<legend>Which platform do your want to target?</legend>
+				<fieldset>
+					<label for="InstagramBox">
+						<input type="checkbox" id="InstagramBox" name="plateform" value="instagram">
+						Instagram
+					</label>
+
+					<label for="SnapchatBox">
+						<input type="checkbox" id="SnapchatBox" name="plateform" value="snapchat">
+						Snapchat
+					</label>
+
+					<label for="TikTokBox">
+						<input type="checkbox" id="TikTokBox" name="plateform" name="tiktok">
+						TikTok
+					</label>
+
+					<label for="WebXRBox">
+						<input type="checkbox" id="WebXRBox" name="plateform" value="webxr">
+						Web XR
+					</label>
+
+					<label for="CustomAppBox">
+						<input type="checkbox" id="CustomAppBox" name="plateform" value="customapp">
+						Game or Application
+					</label>
+				</fieldset>
+				<div class="buttons">
+					<button type="button" id="nextBtn" class="btn-navigate-form-step" step_number="2">Next</button>
+				</div>
+			</section>
+
+			<section id="step-2" class="form-step d-none">
+				<h2>Let us get back to you</h2>
+				<div class="contact-details">
+					<p id="my-form-status"></p>
+					<input type="text" placeholder="Your name" name="name" oninput="this.className = ''">
+					<input type="text" placeholder="Your company" name="company_name" oninput="this.className = ''">
+					<input type="email" placeholder="Your email" name="email" oninput="this.className = ''" required>
+				</div>
+				<div class="buttons">
+					<button type="button" id="PreviousBtn" class="btn-navigate-form-step"
+						step_number="1">Previous</button>
+					<button id="SubmitBtn" class="g-recaptcha button submit-btn"
+						data-sitekey="6LcU8GwkAAAAADLq_lor7Ps736gAAg8Gb7u0DYZL" data-callback='onSubmit'
+						data-badge="inline">Submit</button>
+				</div>
+			</section>
+
+			<!-- Circles which indicates the steps of the form: -->
+			<ul class="steps">
+				<li class="step form-stepper-list form-stepper-unfinished form-stepper-active" step="1"></li>
+				<li class="step form-stepper-list form-stepper-unfinished" step="2"></li>
+			</ul>
+		</form>
+	</main>
+	<!-- Footer -->
+	<footer>
+		<ul>
+			<li><a href="https://fr.linkedin.com/company/flatpixel" target="_blank" rel="noopener noreferrer"
+					class="social linkedin">Linked In</a></li>
+			<li><a href="https://www.twitter.com/Flat_Pixel" target="_blank" rel="noopener noreferrer"
+					class="social twitter">
+					Twitter
+				</a></li>
+			<li><a href="https://www.snapchat.com/add/flatpixel" target="_blank" rel="noopener noreferrer"
+					class="social snapchat">
+					Snapchat
+				</a></li>
+			<li><a href="https://www.instagram.com/flat_pixel" target="_blank" rel="noopener noreferrer"
+					class="social instagram">
+					Instagram
+				</a></li>
+		</ul>
+	</footer>
+	<!-- Scripts -->
+	<script type="module" src="js/storeScroll.js"></script>
+	<script>
+		function validateForm(stepNumber) {
+			// This function deals with validation of the form fields
+			var x, y, i, valid = true;
+			x = document.querySelector("#step-" + stepNumber);
+			y = x.querySelectorAll("input,textarea");
+
+			// A loop that checks every input, textarea fields:
+			for (i = 0; i < y.length; i++) {
+				// If a field is empty...
+				if (y[i].value == "") {
+					// add an "invalid" class to the field:
+					y[i].className += " invalid";
+					// and set the current valid status to false
+					valid = false;
+				}
+				console.log("y[" + i + "].value: " + y[i].value);
+			}
+
+			setTimeout(function () {
+				var x, y, i;
+				x = document.querySelector("#step-" + stepNumber);
+				y = x.querySelectorAll("input,textarea");
+				for (i = 0; i < y.length; i++) {
+					//remove the class so animation can occur as many times as user triggers event, delay must be longer than the animation duration and any delay.
+					y[i].classList.remove("invalid");
+				}
+			}, 1000);
+
+			// If the valid status is true, mark the step as finished and valid:
+			if (valid) document.getElementsByClassName("step")[stepNumber - 1].className += " finish";
+
+			return valid; // return the valid status
+		}
+
+		/**
+		 * Define a function to navigate betweens form steps.
+		 * It accepts one parameter. That is - step number.
+		 */
+		const navigateToFormStep = (stepNumber) => {
+			/**
+			 * Hide all form steps.
+			 */
+			document.querySelectorAll(".form-step").forEach((formStepElement) => {
+				formStepElement.classList.add("d-none");
+			});
+			/**
+			 * Mark all form steps as unfinished.
+			 */
+			document.querySelectorAll(".form-stepper-list").forEach((formStepHeader) => {
+				formStepHeader.classList.add("form-stepper-unfinished");
+				formStepHeader.classList.remove("form-stepper-active", "form-stepper-completed");
+			});
+			/**
+			 * Show the current form step (as passed to the function).
+			 */
+			document.querySelector("#step-" + stepNumber).classList.remove("d-none");
+			/**
+			 * Reset the scroll for new tab form
+			 */
+			window.scrollTo(0, 0);
+			/**
+			 * Select the form step circle (progress bar).
+			 */
+			const formStepCircle = document.querySelector('li[step="' + stepNumber + '"]');
+			/**
+			 * Mark the current form step as active.
+			 */
+			formStepCircle.classList.remove("form-stepper-unfinished", "form-stepper-completed");
+			formStepCircle.classList.add("form-stepper-active");
+			/**
+			 * Loop through each form step circles.
+			 * This loop will continue up to the current step number.
+			 * Example: If the current step is 3,
+			 * then the loop will perform operations for step 1 and 2.
+			 */
+			for (let index = 0; index < stepNumber; index++) {
+				/**
+				 * Select the form step circle (progress bar).
+				 */
+				const formStepCircle = document.querySelector('li[step="' + index + '"]');
+				/**
+				 * Check if the element exist. If yes, then proceed.
+				 */
+				if (formStepCircle) {
+					/**
+					 * Mark the form step as completed.
+					 */
+					formStepCircle.classList.remove("form-stepper-unfinished", "form-stepper-active");
+					formStepCircle.classList.add("form-stepper-completed");
+				}
+			}
+		};
+
+		/**
+		 * Select all form navigation buttons, and loop through them.
+		 */
+		document.querySelectorAll(".btn-navigate-form-step").forEach((formNavigationBtn) => {
+			/**
+			 * Add a click event listener to the button.
+			 */
+			formNavigationBtn.addEventListener("click", () => {
+				/**
+				 * Get the value of the step.
+				 */
+				const stepNumber = parseInt(formNavigationBtn.getAttribute("step_number"));
+				console.log("addEventListener " + stepNumber);
+
+				/**
+				 * Call the function to navigate to the target form step.
+				 */
+				if ((stepNumber - 1) >= 1) {
+					if (validateForm(stepNumber - 1)) {
+						console.log("isValid");
+						navigateToFormStep(stepNumber);
+					}
+				} else {
+					console.log("Page 1, previous ?");
+					navigateToFormStep(stepNumber);
+				}
+			});
+		});
+	</script>
+
+	<script>
+		var form = document.getElementById("invisible-recaptcha-form");
+		async function handleSubmit(event) {
+			event.preventDefault();
+
+			if (validateForm(2) == false) { };
+
+			var status = document.getElementById("my-form-status");
+			var data = new FormData(event.target);
+			fetch(event.target.action, {
+				method: form.method,
+				body: data,
+				headers: {
+					'Accept': 'application/json'
+				}
+			}).then(response => {
+				if (response.ok) {
+					status.innerHTML = "Thanks for your submission!";
+					status.className += " success";
+					form.reset()
+				} else {
+					response.json().then(data => {
+						if (Object.hasOwn(data, 'errors')) {
+							status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+							status.className += " error";
+						} else {
+							status.innerHTML = "Oops! There was a problem submitting your form"
+							status.className += " error";
+						}
+					})
+				}
+			}).catch(error => {
+				status.innerHTML = "Oops! There was a problem submitting your form"
+				status.className += " error";
+			});
+		}
+		form.addEventListener("submit", handleSubmit)
+	</script>
+</body>
+
+</html>
