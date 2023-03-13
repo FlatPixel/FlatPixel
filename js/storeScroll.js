@@ -1,5 +1,5 @@
 // The debounce function receives our function as a parameter
-const debounce = (fn) => {
+const debounce_fn = (fn) => {
 
     // This holds the requestAnimationFrame reference, so we can cancel it if we wish
     let frame;
@@ -30,7 +30,7 @@ const storeScroll = () => {
 }
 
 // Listen for new scroll events, here we debounce our `storeScroll` function
-document.addEventListener('scroll', debounce(storeScroll), { passive: true });
+document.addEventListener('scroll', debounce_fn(storeScroll), { passive: true });
 
 // Update scroll position for first time
 storeScroll();

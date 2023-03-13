@@ -151,7 +151,7 @@
 					// and set the current valid status to false
 					valid = false;
 				}
-				console.log("y[" + i + "].value: " + y[i].value);
+				// console.log("y[" + i + "].value: " + y[i].value);
 			}
 
 			setTimeout(function () {
@@ -241,18 +241,16 @@
 				 * Get the value of the step.
 				 */
 				const stepNumber = parseInt(formNavigationBtn.getAttribute("step_number"));
-				console.log("addEventListener " + stepNumber);
+				// console.log("addEventListener " + stepNumber);
 
 				/**
 				 * Call the function to navigate to the target form step.
 				 */
 				if ((stepNumber - 1) >= 1) {
 					if (validateForm(stepNumber - 1)) {
-						console.log("isValid");
 						navigateToFormStep(stepNumber);
 					}
 				} else {
-					console.log("Page 1, previous ?");
 					navigateToFormStep(stepNumber);
 				}
 			});

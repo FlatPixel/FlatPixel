@@ -36,9 +36,6 @@ const canHover = window.matchMedia('(hover: hover)').matches;
 //
 
 document.addEventListener("DOMContentLoaded", function () {
-
-    console.log("canHover: " + canHover);
-
     // Fill videos array
     var gallery = document.querySelectorAll(".gallery");
     var videoContainers = document.querySelectorAll(".video-container");
