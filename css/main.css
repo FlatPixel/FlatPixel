@@ -643,6 +643,7 @@ main#Projects .gallery {
   transition: 0.3s;
   flex-direction: row;
   width: 100%;
+  max-width: 1800px;
   justify-content: center;
 }
 @media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 790px), (hover: none) {
@@ -912,6 +913,8 @@ main#Contact #my-form-status {
   justify-content: center;
   align-content: center;
   align-items: center;
+  justify-self: center;
+  align-self: center;
   vertical-align: middle;
   min-height: 50px;
   text-align: center;

@@ -856,6 +856,7 @@ main#Projects {
         flex-direction: row;
         // flex-flow: wrap;
         width: 100%;
+        max-width: 1800px;
         justify-content: center;
 
         @include for-mobile-and-touchable() {
@@ -1180,6 +1181,8 @@ main#Contact {
         justify-content: center;
         align-content: center;
         align-items: center;
+        justify-self: center;
+        align-self: center;
         vertical-align: middle;
         min-height: 50px;
         text-align: center;

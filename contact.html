@@ -92,8 +92,8 @@
 
 			<section id="step-2" class="form-step d-none">
 				<h2>Let us get back to you</h2>
+				<p id="my-form-status"></p>
 				<div class="contact-details">
-					<p id="my-form-status"></p>
 					<input type="text" placeholder="Your name" name="name" oninput="this.className = ''">
 					<input type="text" placeholder="Your company" name="company_name" oninput="this.className = ''">
 					<input type="email" placeholder="Your email" name="email" oninput="this.className = ''" required>
@@ -279,10 +279,20 @@
 					status.innerHTML = "Thanks for your submission!";
 					status.className += " success";
 					form.reset()
+					/**
+					 * Hide all form steps.
+					 */
+					document.querySelectorAll(".contact-details").forEach((formStepElement) => {
+						formStepElement.classList.add("d-none");
+					});
+
+					document.querySelectorAll(".buttons").forEach((formStepElement) => {
+						formStepElement.classList.add("d-none");
+					});
 				} else {
 					response.json().then(data => {
 						if (Object.hasOwn(data, 'errors')) {
-							status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+							status.innerHTML = "Error: " + data["errors"].map(error => error["message"]).join(", ")
 							status.className += " error";
 						} else {
 							status.innerHTML = "Oops! There was a problem submitting your form"
