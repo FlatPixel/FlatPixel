@@ -1125,6 +1125,11 @@ main#Contact .d-none {
     bottom: 0;
   }
 }
+@media screen and (min-width: calc(1200px + 1px)) {
+  footer {
+    padding-right: min(60px, 5vw);
+  }
+}
 @media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 790px) {
   footer {
     position: relative;
@@ -1141,6 +1146,11 @@ footer ul {
   display: flex;
   align-items: center;
   gap: 15px;
+}
+@media screen and (min-width: calc(1200px + 1px)) {
+  footer ul {
+    align-items: flex-end;
+  }
 }
 @media screen and (min-width: calc(810px + 1px)) and (min-height: calc(790px + 1px)) {
   footer ul {

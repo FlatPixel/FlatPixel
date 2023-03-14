@@ -1425,6 +1425,10 @@ footer {
         bottom: 0;
     }
 
+    @include for-big-screen-only() {
+        padding-right: min(60px, 5vw);
+    }
+
     @include for-mobile-only() {
         position: relative;
         width: 100%;
@@ -1440,6 +1444,10 @@ footer {
         display: flex;
         align-items: center;
         gap: 15px;
+
+        @include for-big-screen-only() {
+            align-items: flex-end;
+        }
 
         @include for-all-except-mobile() {
             flex-direction: column;
