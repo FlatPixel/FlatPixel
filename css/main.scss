@@ -225,10 +225,6 @@ canvas {
         margin-right: 15px;
     }
 
-    &:hover {
-        text-decoration: underline;
-    }
-
     &.active {
         color: $pink;
     }
@@ -548,6 +544,10 @@ main#Home {
 
         padding: 0 15px;
 
+        p {
+            line-height: 1.3em;
+        }
+
         @include for-mobile-only() {
             grid-row: 2;
 
@@ -563,7 +563,7 @@ main#Home {
 
     h2 {
         font-family: $font-big;
-        font-size: 4em;
+        font-size: 6em;
         line-height: 0.85em;
         width: 100%;
 
@@ -752,15 +752,12 @@ main#Services {
         min-width: 280px;
         min-height: 380px;
         width: 300px;
-        height: 400px;
-        background: #fff;
-        border-radius: 35px;
-        box-shadow: 0 15px 20px rgb(0 0 0 / 25%);
+        height: 500px;
 
         transition: all 0.4s cubic-bezier(0.33, 1, 0.68, 1);
         transition-property: background, transform, color, opacity;
 
-        a {
+        >a {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -769,7 +766,10 @@ main#Services {
             padding: 0 30px;
             text-align: center;
             width: 100%;
-            height: 100%;
+            height: 400px;
+            background: #fff;
+            border-radius: 35px;
+            box-shadow: 0 15px 20px rgb(0 0 0 / 25%);
 
             h2 {
                 font-family: $font-big;
@@ -832,6 +832,22 @@ main#Services {
 
     .card * {
         color: $pink;
+    }
+
+    .figures {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        color: white;
+        margin-top: 25px;
+
+        a {
+            display: inline-block;
+            font-family: $font-big;
+            font-size: 2em;
+            color: white;
+            text-decoration: underline;
+        }
     }
 }
 
@@ -982,6 +998,48 @@ main#About {
 
             @include for-mobile-only() {
                 padding: 0 15px;
+            }
+        }
+
+        ul {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+
+            li.award {
+                width: 100px;
+                height: 100px;
+                overflow: hidden;
+                min-width: 0;
+                min-height: 0;
+                font-size: 0;
+
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+
+            .clio1 {
+                background-size: contain;
+                background-image: url("../images/awards/award_clio2018.png");
+            }
+
+            .clio2 {
+                background-size: contain;
+                background-image: url("../images/awards/award_clio2019.png");
+            }
+
+            .kidchoice {
+                background-size: contain;
+                background-image: url("../images/awards/award_kidscreen.png");
+            }
+
+            .lensathon {
+                background-size: contain;
+                background-image: url("../images/awards/award_lensathon.png");
             }
         }
     }

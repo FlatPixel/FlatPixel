@@ -101,9 +101,6 @@ canvas {
 #Logo * {
   margin-right: 15px;
 }
-#Logo:hover {
-  text-decoration: underline;
-}
 #Logo.active {
   color: #ff6b6a;
 }
@@ -374,6 +371,9 @@ main#Home #Blahblah {
   grid-column: 1;
   padding: 0 15px;
 }
+main#Home #Blahblah p {
+  line-height: 1.3em;
+}
 @media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 790px) {
   main#Home #Blahblah {
     grid-row: 2;
@@ -386,7 +386,7 @@ main#Home #Blahblah {
 }
 main#Home h2 {
   font-family: "montserrat-black", sans-serif;
-  font-size: 4em;
+  font-size: 6em;
   line-height: 0.85em;
   width: 100%;
 }
@@ -556,14 +556,11 @@ main#Services .card {
   min-width: 280px;
   min-height: 380px;
   width: 300px;
-  height: 400px;
-  background: #fff;
-  border-radius: 35px;
-  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.25);
+  height: 500px;
   transition: all 0.4s cubic-bezier(0.33, 1, 0.68, 1);
   transition-property: background, transform, color, opacity;
 }
-main#Services .card a {
+main#Services .card > a {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -572,17 +569,20 @@ main#Services .card a {
   padding: 0 30px;
   text-align: center;
   width: 100%;
-  height: 100%;
+  height: 400px;
+  background: #fff;
+  border-radius: 35px;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.25);
 }
-main#Services .card a h2 {
+main#Services .card > a h2 {
   font-family: "montserrat-black", sans-serif;
   font-size: 1.75em;
 }
-main#Services .card a p {
+main#Services .card > a p {
   font-family: "montserrat-regular", sans-serif;
   font-size: 1em;
 }
-main#Services .card a .icons {
+main#Services .card > a .icons {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -591,7 +591,7 @@ main#Services .card a .icons {
   width: 100%;
   min-height: 75px;
 }
-main#Services .card a .icons .icon {
+main#Services .card > a .icons .icon {
   overflow: hidden;
   width: 100%;
   height: 100%;
@@ -600,26 +600,40 @@ main#Services .card a .icons .icon {
   background-size: contain;
   background-position: center;
 }
-main#Services .card a .icons .instagram {
+main#Services .card > a .icons .instagram {
   background-image: url("../images/services/icon_insta.png");
 }
-main#Services .card a .icons .snapchat {
+main#Services .card > a .icons .snapchat {
   background-image: url("../images/services/icon_snapChat.png");
 }
-main#Services .card a .icons .tiktok {
+main#Services .card > a .icons .tiktok {
   background-image: url("../images/services/icon_tikTok.png");
 }
-main#Services .card a .icons .unity {
+main#Services .card > a .icons .unity {
   background-image: url("../images/services/icon_Unity.png");
 }
-main#Services .card a .icons .eightwall {
+main#Services .card > a .icons .eightwall {
   background-image: url("../images/services/icon_8thWall.png");
 }
-main#Services .card a .icons .lightship {
+main#Services .card > a .icons .lightship {
   background-image: url("../images/services/icon_lightShip.png");
 }
 main#Services .card * {
   color: #ff6b6a;
+}
+main#Services .figures {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  color: white;
+  margin-top: 25px;
+}
+main#Services .figures a {
+  display: inline-block;
+  font-family: "montserrat-black", sans-serif;
+  font-size: 2em;
+  color: white;
+  text-decoration: underline;
 }
 
 main#Projects {
@@ -756,6 +770,41 @@ main#About #Presentation p {
   main#About #Presentation p {
     padding: 0 15px;
   }
+}
+main#About #Presentation ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+main#About #Presentation ul li.award {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  min-width: 0;
+  min-height: 0;
+  font-size: 0;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+main#About #Presentation ul .clio1 {
+  background-size: contain;
+  background-image: url("../images/awards/award_clio2018.png");
+}
+main#About #Presentation ul .clio2 {
+  background-size: contain;
+  background-image: url("../images/awards/award_clio2019.png");
+}
+main#About #Presentation ul .kidchoice {
+  background-size: contain;
+  background-image: url("../images/awards/award_kidscreen.png");
+}
+main#About #Presentation ul .lensathon {
+  background-size: contain;
+  background-image: url("../images/awards/award_lensathon.png");
 }
 main#About #TeamPhoto {
   display: flex;
