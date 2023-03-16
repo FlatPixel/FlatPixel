@@ -535,32 +535,30 @@ main#Services #Cards {
     justify-content: start;
   }
 }
-main#Services .card:not(:empty):hover,
-main#Services .card:not(:empty):focus {
-  z-index: 1;
-  color: #fff;
-  opacity: 1;
-  transform: scale(1.05) rotateZ(2deg);
-  cursor: pointer;
-}
-main#Services .card:not(:empty):hover:after,
-main#Services .card:not(:empty):focus:after {
-  opacity: 1;
-}
-main#Services .card:not(:empty):hover:before,
-main#Services .card:not(:empty):focus:before {
-  opacity: 0;
-}
 main#Services .card {
   position: relative;
   min-width: 280px;
   min-height: 380px;
   width: 300px;
   height: 500px;
-  transition: all 0.4s cubic-bezier(0.33, 1, 0.68, 1);
-  transition-property: background, transform, color, opacity;
 }
-main#Services .card > a {
+main#Services .card .inner:not(:empty):hover,
+main#Services .card .inner:not(:empty):focus {
+  z-index: 1;
+  color: #fff;
+  opacity: 1;
+  transform: scale(1.05) rotateZ(2deg);
+  cursor: pointer;
+}
+main#Services .card .inner:not(:empty):hover:after,
+main#Services .card .inner:not(:empty):focus:after {
+  opacity: 1;
+}
+main#Services .card .inner:not(:empty):hover:before,
+main#Services .card .inner:not(:empty):focus:before {
+  opacity: 0;
+}
+main#Services .card .inner {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -573,16 +571,18 @@ main#Services .card > a {
   background: #fff;
   border-radius: 35px;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.25);
+  transition: all 0.4s cubic-bezier(0.33, 1, 0.68, 1);
+  transition-property: background, transform, color, opacity;
 }
-main#Services .card > a h2 {
+main#Services .card .inner h2 {
   font-family: "montserrat-black", sans-serif;
   font-size: 1.75em;
 }
-main#Services .card > a p {
+main#Services .card .inner p {
   font-family: "montserrat-regular", sans-serif;
   font-size: 1em;
 }
-main#Services .card > a .icons {
+main#Services .card .inner .icons {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -591,7 +591,7 @@ main#Services .card > a .icons {
   width: 100%;
   min-height: 75px;
 }
-main#Services .card > a .icons .icon {
+main#Services .card .inner .icons .icon {
   overflow: hidden;
   width: 100%;
   height: 100%;
@@ -600,22 +600,22 @@ main#Services .card > a .icons .icon {
   background-size: contain;
   background-position: center;
 }
-main#Services .card > a .icons .instagram {
+main#Services .card .inner .icons .instagram {
   background-image: url("../images/services/icon_insta.png");
 }
-main#Services .card > a .icons .snapchat {
+main#Services .card .inner .icons .snapchat {
   background-image: url("../images/services/icon_snapChat.png");
 }
-main#Services .card > a .icons .tiktok {
+main#Services .card .inner .icons .tiktok {
   background-image: url("../images/services/icon_tikTok.png");
 }
-main#Services .card > a .icons .unity {
+main#Services .card .inner .icons .unity {
   background-image: url("../images/services/icon_Unity.png");
 }
-main#Services .card > a .icons .eightwall {
+main#Services .card .inner .icons .eightwall {
   background-image: url("../images/services/icon_8thWall.png");
 }
-main#Services .card > a .icons .lightship {
+main#Services .card .inner .icons .lightship {
   background-image: url("../images/services/icon_lightShip.png");
 }
 main#Services .card * {
@@ -624,16 +624,28 @@ main#Services .card * {
 main#Services .figures {
   display: inline-block;
   width: 100%;
-  text-align: center;
+  text-align: left;
   color: white;
-  margin-top: 25px;
+  margin-top: 35px;
+  padding: 0 25px;
+  line-height: 1em;
 }
-main#Services .figures a {
-  display: inline-block;
+main#Services .figures .bigNumber {
+  float: left;
+  padding: 0px 10px 0px 0px;
   font-family: "montserrat-black", sans-serif;
-  font-size: 2em;
+  font-size: 2.5em;
+  line-height: 0.5em;
+  color: white;
+}
+main#Services .figures .bigNumber span {
+  color: white;
+  font-size: 0.4em;
+}
+main#Services .figures sup {
   color: white;
   text-decoration: underline;
+  vertical-align: top;
 }
 
 main#Projects {
@@ -778,11 +790,10 @@ main#About #Presentation ul {
   align-items: center;
   justify-content: center;
   gap: 15px;
-  flex-wrap: wrap;
 }
 main#About #Presentation ul li.award {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   overflow: hidden;
   min-width: 0;
   min-height: 0;
