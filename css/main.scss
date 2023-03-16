@@ -545,7 +545,7 @@ main#Home {
         padding: 0 15px;
 
         p {
-            line-height: 1.3em;
+            line-height: 1.2em;
         }
 
         @include for-mobile-only() {
@@ -568,8 +568,8 @@ main#Home {
         width: 100%;
 
         @include for-mobile-only() {
-            font-size: 2.3em;
-            line-height: 1.25em;
+            font-size: 2.5em;
+            line-height: 1.1em;
             padding: 0 15px;
         }
     }
@@ -709,8 +709,8 @@ main#Services {
         text-align: center;
 
         @include for-mobile-only() {
-            font-size: 1.75em;
-            line-height: 1.25em;
+            font-size: 2.5em;
+            line-height: 1.1em;
         }
     }
 
@@ -736,6 +736,10 @@ main#Services {
         min-height: 380px;
         width: 300px;
         height: 500px;
+
+        @include for-mobile-only() {
+            height: 520px;
+        }
 
         .inner:not(:empty):hover,
         .inner:not(:empty):focus {
@@ -799,8 +803,6 @@ main#Services {
                     background-repeat: no-repeat;
                     background-size: contain;
                     background-position: center;
-                    // background-color: $pink;
-                    // filter: invert(53%) sepia(71%) saturate(845%) hue-rotate(317deg) brightness(101%) contrast(119%);
                 }
 
                 .instagram {
@@ -970,25 +972,34 @@ main#Projects {
 
 main#About {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
+
+    @include for-big-screen-only() {
+        align-items: flex-start;
+    }
+
     gap: 25px;
 
     grid-row: 2;
-    grid-column-start: 2;
-    grid-column-end: 3;
+
+    flex-direction: column;
+    grid-column: 2 / 3;
+
+    @include for-mobile-only() {
+        grid-column: 1 / 4;
+    }
 
     align-content: center;
+
+
     align-self: center;
 
     padding-bottom: 25px;
 
-    @include for-mobile-only() {
-        flex-direction: column;
-
-        grid-column-start: 1;
-        grid-column-end: 4;
+    @include for-big-screen-only() {
+        flex-direction: row;
+        grid-column: 2 / 3;
     }
 
     #Presentation {
@@ -1000,10 +1011,11 @@ main#About {
 
         flex-wrap: wrap;
 
-        @include for-all-except-mobile() {
+        @include for-big-screen-only() {
             flex: 1 1 700px;
             max-width: 700px;
             justify-content: center;
+            margin-top: 100px;
         }
 
         p {
@@ -1022,11 +1034,12 @@ main#About {
             align-items: center;
             justify-content: center;
             gap: 15px;
-            // flex-wrap: wrap;
+            flex-wrap: wrap;
 
             li.award {
                 width: 150px;
                 height: 150px;
+                // flex: 0 0.5 150px;
                 overflow: hidden;
                 min-width: 0;
                 min-height: 0;
@@ -1065,12 +1078,16 @@ main#About {
         align-items: center;
         gap: 15px;
 
-        flex: 2 0 300px;
+        flex: 2 0 400px;
 
         max-width: 450px;
         min-width: 300px;
 
         margin-top: 25px;
+
+        @include for-big-screen-only() {
+            margin-top: 100px;
+        }
 
         img {
             width: 100%;

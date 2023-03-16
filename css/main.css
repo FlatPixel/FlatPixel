@@ -372,7 +372,7 @@ main#Home #Blahblah {
   padding: 0 15px;
 }
 main#Home #Blahblah p {
-  line-height: 1.3em;
+  line-height: 1.2em;
 }
 @media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 790px) {
   main#Home #Blahblah {
@@ -392,8 +392,8 @@ main#Home h2 {
 }
 @media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 790px) {
   main#Home h2 {
-    font-size: 2.3em;
-    line-height: 1.25em;
+    font-size: 2.5em;
+    line-height: 1.1em;
     padding: 0 15px;
   }
 }
@@ -515,8 +515,8 @@ main#Services h1 {
 }
 @media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 790px) {
   main#Services h1 {
-    font-size: 1.75em;
-    line-height: 1.25em;
+    font-size: 2.5em;
+    line-height: 1.1em;
   }
 }
 main#Services #Cards {
@@ -541,6 +541,11 @@ main#Services .card {
   min-height: 380px;
   width: 300px;
   height: 500px;
+}
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 790px) {
+  main#Services .card {
+    height: 520px;
+  }
 }
 main#Services .card .inner:not(:empty):hover,
 main#Services .card .inner:not(:empty):focus {
@@ -741,22 +746,30 @@ main#Projects .gallery__caption {
 
 main#About {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 25px;
   grid-row: 2;
-  grid-column-start: 2;
-  grid-column-end: 3;
+  flex-direction: column;
+  grid-column: 2/3;
   align-content: center;
   align-self: center;
   padding-bottom: 25px;
 }
+@media screen and (min-width: calc(1200px + 1px)) {
+  main#About {
+    align-items: flex-start;
+  }
+}
 @media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 790px) {
   main#About {
-    flex-direction: column;
-    grid-column-start: 1;
-    grid-column-end: 4;
+    grid-column: 1/4;
+  }
+}
+@media screen and (min-width: calc(1200px + 1px)) {
+  main#About {
+    flex-direction: row;
+    grid-column: 2/3;
   }
 }
 main#About #Presentation {
@@ -767,11 +780,12 @@ main#About #Presentation {
   gap: 35px;
   flex-wrap: wrap;
 }
-@media screen and (min-width: calc(810px + 1px)) and (min-height: calc(790px + 1px)) {
+@media screen and (min-width: calc(1200px + 1px)) {
   main#About #Presentation {
     flex: 1 1 700px;
     max-width: 700px;
     justify-content: center;
+    margin-top: 100px;
   }
 }
 main#About #Presentation p {
@@ -790,6 +804,7 @@ main#About #Presentation ul {
   align-items: center;
   justify-content: center;
   gap: 15px;
+  flex-wrap: wrap;
 }
 main#About #Presentation ul li.award {
   width: 150px;
@@ -823,10 +838,15 @@ main#About #TeamPhoto {
   justify-content: center;
   align-items: center;
   gap: 15px;
-  flex: 2 0 300px;
+  flex: 2 0 400px;
   max-width: 450px;
   min-width: 300px;
   margin-top: 25px;
+}
+@media screen and (min-width: calc(1200px + 1px)) {
+  main#About #TeamPhoto {
+    margin-top: 100px;
+  }
 }
 main#About #TeamPhoto img {
   width: 100%;
