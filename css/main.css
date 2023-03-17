@@ -29,8 +29,12 @@ ul li {
   src: url("../fonts/Montserrat/webfonts/Montserrat-Black.woff") format("woff");
 }
 @font-face {
-  font-family: "montserrat-regular";
+  font-family: "montserrat-semibold";
   src: url("../fonts/Montserrat/webfonts/Montserrat-SemiBold.woff") format("woff");
+}
+@font-face {
+  font-family: "montserrat-regular";
+  src: url("../fonts/Montserrat/webfonts/Montserrat-Regular.woff") format("woff");
 }
 h1 {
   font-family: "montserrat-black", sans-serif;
@@ -48,7 +52,7 @@ h1 {
 
 body {
   background-color: #ff6b6a;
-  font-family: "montserrat-regular", sans-serif;
+  font-family: "montserrat-semibold", sans-serif;
   display: grid;
   width: 100vw;
   min-height: 100vh;
@@ -463,7 +467,7 @@ main#Home #Showreel video {
   }
 }
 main#Home p {
-  font-family: "montserrat-regular", sans-serif;
+  font-family: "montserrat-semibold", sans-serif;
   font-size: 1.25em;
   line-height: 1em;
   width: 100%;
@@ -584,7 +588,7 @@ main#Services .card .inner h2 {
   font-size: 1.75em;
 }
 main#Services .card .inner p {
-  font-family: "montserrat-regular", sans-serif;
+  font-family: "montserrat-semibold", sans-serif;
   font-size: 1em;
 }
 main#Services .card .inner .icons {
@@ -736,7 +740,7 @@ main#Projects .gallery__caption {
   left: 0;
   padding: 25px 15px 15px;
   width: 100%;
-  font-family: "montserrat-regular", sans-serif;
+  font-family: "montserrat-semibold", sans-serif;
   font-size: 16px;
   color: white;
   opacity: 0;
@@ -789,13 +793,16 @@ main#About #Presentation {
   }
 }
 main#About #Presentation p {
-  font-family: "montserrat-regular", sans-serif;
+  font-family: "montserrat-semibold", sans-serif;
   font-size: 1.2em;
 }
 @media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 790px) {
   main#About #Presentation p {
     padding: 0 15px;
   }
+}
+main#About #Presentation p a {
+  text-decoration: underline;
 }
 main#About #Presentation ul {
   width: 100%;
@@ -866,7 +873,7 @@ main#Contact {
   grid-column-end: 3;
   margin: 0 auto;
   padding: 25px 0;
-  font-family: "montserrat-regular", sans-serif;
+  font-family: "montserrat-semibold", sans-serif;
   align-self: center;
   justify-self: center;
   /* Style the form */
@@ -906,19 +913,20 @@ main#Contact legend {
 }
 main#Contact textarea {
   background: #fff;
-  color: #ff6b6a;
   width: 100%;
   height: 150px;
-  padding: 12px 20px;
-  box-sizing: border-box;
+  min-height: 150px;
+  padding: 0.6em 1.45em 0.7em;
+  font-family: "montserrat-regular", sans-serif;
+  font-size: 1.1em;
+  color: #ff6b6a;
+  line-height: 1.4em;
   border: 1px solid #d1d1d1;
   box-shadow: inset 0px 1px 8px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
-  resize: none;
-  font-size: 1.5em;
-  line-height: 1.45;
+  box-sizing: border-box;
+  resize: vertical;
   outline: none;
-  padding: 0.6em 1.45em 0.7em;
   transition: 0.18s ease-out;
 }
 main#Contact textarea:hover {
@@ -931,9 +939,7 @@ main#Contact textarea:focus {
 main#Contact input[type=text], main#Contact input[type=email] {
   border-radius: 99px;
   padding: 10px;
-  width: 100%;
   min-height: 50px;
-  font-size: 17px;
 }
 main#Contact input[type=text], main#Contact input[type=email] {
   width: 100%;
@@ -941,7 +947,7 @@ main#Contact input[type=text], main#Contact input[type=email] {
   color: #ff6b6a;
   border: 1px solid #d1d1d1;
   box-shadow: inset 0px 1px 8px rgba(0, 0, 0, 0.2);
-  font-family: inherit;
+  font-family: "montserrat-semibold", sans-serif;
   font-size: 1em;
   line-height: 1.45;
   outline: none;

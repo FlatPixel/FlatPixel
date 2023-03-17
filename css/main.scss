@@ -30,8 +30,13 @@ ul {
 }
 
 @font-face {
-    font-family: "montserrat-regular";
+    font-family: "montserrat-semibold";
     src: url("../fonts/Montserrat/webfonts/Montserrat-SemiBold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "montserrat-regular";
+    src: url("../fonts/Montserrat/webfonts/Montserrat-Regular.woff") format("woff");
 }
 
 //
@@ -39,8 +44,9 @@ ul {
 //
 
 $font-big: "montserrat-black", sans-serif;
-$font-main: "montserrat-regular", sans-serif;
-$font-alt: "montserrat-black", sans-serif;
+$font-main: "montserrat-semibold", sans-serif;
+$font-regular: "montserrat-regular", sans-serif;
+$font-alt: "montserrat-regular", sans-serif;
 
 $pink: #ff6b6a;
 $orange: #e58028;
@@ -1025,6 +1031,10 @@ main#About {
             @include for-mobile-only() {
                 padding: 0 15px;
             }
+
+            a {
+                text-decoration: underline;
+            }
         }
 
         ul {
@@ -1143,22 +1153,25 @@ main#Contact {
     /* Style the input fields */
     textarea {
         background: #fff;
-        color: $pink;
         width: 100%;
         height: 150px;
-        padding: 12px 20px;
-        box-sizing: border-box;
+        min-height: 150px;
+        padding: 0.6em 1.45em 0.7em;
+
+        font-family: $font-regular;
+        font-size: 1.1em;
+        color: $pink;
+        line-height: 1.4em;
+
         border: 1px solid #d1d1d1;
         box-shadow: inset 0px 1px 8px rgba(0, 0, 0, 0.2);
         border-radius: 20px;
-        resize: none;
-        font-size: 1.5em;
-        line-height: 1.45;
+
+        box-sizing: border-box;
+        resize: vertical;
+
         outline: none;
-        padding: 0.6em 1.45em 0.7em;
-        -webkit-transition: .18s ease-out;
-        -moz-transition: .18s ease-out;
-        -o-transition: .18s ease-out;
+
         transition: .18s ease-out;
     }
 
@@ -1177,9 +1190,7 @@ main#Contact {
         &[type=email] {
             border-radius: 99px;
             padding: 10px;
-            width: 100%;
             min-height: 50px;
-            font-size: 17px;
         }
     }
 
@@ -1192,7 +1203,7 @@ main#Contact {
             color: $pink;
             border: 1px solid #d1d1d1;
             box-shadow: inset 0px 1px 8px rgba(0, 0, 0, 0.2);
-            font-family: inherit;
+            font-family: $font-main;
             font-size: 1em;
             line-height: 1.45;
             outline: none;
