@@ -59,7 +59,7 @@ body {
   grid-template-columns: minmax(60px, 10vw) 1fr minmax(60px, 10vw);
   grid-template-rows: max(10vh, 60px) 1fr max(10vh, 60px);
 }
-@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px) {
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px), screen and (orientation: landscape) and (max-width: 810px) {
   body {
     padding: 3vw;
     margin-bottom: 10px;
@@ -199,7 +199,7 @@ nav {
     border-color: rgba(255, 255, 255, 0.5);
   }
 }
-@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px) {
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px), screen and (orientation: landscape) and (max-width: 810px) {
   nav ul {
     position: fixed;
     top: 0;
@@ -225,17 +225,17 @@ nav {
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
   }
 }
-@media screen and (orientation: portrait) and (max-width: 810px) and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px) and (orientation: portrait) and (max-width: 810px) {
+@media screen and (orientation: portrait) and (max-width: 810px) and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px) and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-width: 810px) and (orientation: portrait) and (max-width: 810px) {
   nav ul {
     gap: 30px;
   }
 }
-@media screen and (orientation: portrait) and (max-width: 810px) and (orientation: landscape) and (max-height: 700px), screen and (orientation: landscape) and (max-height: 700px) and (orientation: landscape) and (max-height: 700px) {
+@media screen and (orientation: portrait) and (max-width: 810px) and (orientation: landscape) and (max-height: 700px), screen and (orientation: landscape) and (max-height: 700px) and (orientation: landscape) and (max-height: 700px), screen and (orientation: landscape) and (max-width: 810px) and (orientation: landscape) and (max-height: 700px) {
   nav ul {
     gap: 15px;
   }
 }
-@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px) {
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px), screen and (orientation: landscape) and (max-width: 810px) {
   nav ul li {
     display: flex;
     align-items: center;
@@ -268,7 +268,7 @@ nav {
     opacity: 50%;
   }
 }
-@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px) {
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px), screen and (orientation: landscape) and (max-width: 810px) {
   nav ul #btnContact a {
     min-width: 160px;
     max-width: 160px;
@@ -352,7 +352,7 @@ main#Privacy {
   align-self: center;
   justify-self: center;
 }
-@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px) {
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px), screen and (orientation: landscape) and (max-width: 810px) {
   main#Privacy {
     grid-column-start: 1;
     grid-column-end: 4;
@@ -398,7 +398,7 @@ main#Home {
   align-self: center;
   justify-self: center;
 }
-@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px) {
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px), screen and (orientation: landscape) and (max-width: 810px) {
   main#Home {
     grid-template-columns: 1fr;
     grid-template-rows: min-content 1fr;
@@ -424,7 +424,7 @@ main#Home #Blahblah {
 main#Home #Blahblah p {
   line-height: 1.2em;
 }
-@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px) {
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px), screen and (orientation: landscape) and (max-width: 810px) {
   main#Home #Blahblah {
     grid-row: 2;
     align-items: center;
@@ -440,7 +440,7 @@ main#Home h2 {
   line-height: 0.85em;
   width: 100%;
 }
-@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px) {
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px), screen and (orientation: landscape) and (max-width: 810px) {
   main#Home h2 {
     font-size: 2.5em;
     line-height: 1.1em;
@@ -458,7 +458,7 @@ main#Home #Showreel {
   align-self: center;
   justify-self: center;
 }
-@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px) {
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px), screen and (orientation: landscape) and (max-width: 810px) {
   main#Home #Showreel {
     grid-column: 1;
   }
@@ -485,7 +485,7 @@ main#Home #Showreel video {
   height: auto;
   aspect-ratio: 1/1;
 }
-@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px) {
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px), screen and (orientation: landscape) and (max-width: 810px) {
   main#Home #Showreel video {
     border: solid 8px white;
   }
@@ -518,7 +518,7 @@ main#Home p {
   line-height: 1em;
   width: 100%;
 }
-@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px) {
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px), screen and (orientation: landscape) and (max-width: 810px) {
   main#Home p {
     padding: 0 15px;
   }
@@ -551,7 +551,7 @@ main#Services {
   flex-wrap: wrap;
   gap: 50px;
 }
-@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px) {
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px), screen and (orientation: landscape) and (max-width: 810px) {
   main#Services {
     grid-column-start: 1;
     grid-column-end: 4;
@@ -563,7 +563,7 @@ main#Services h1 {
   font-size: 2.7em;
   text-align: center;
 }
-@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px) {
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px), screen and (orientation: landscape) and (max-width: 810px) {
   main#Services h1 {
     font-size: 2.5em;
     line-height: 1.1em;
@@ -579,7 +579,7 @@ main#Services #Cards {
   gap: 40px;
   flex-wrap: wrap;
 }
-@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px) {
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px), screen and (orientation: landscape) and (max-width: 810px) {
   main#Services #Cards {
     flex-direction: column;
     justify-content: start;
@@ -592,7 +592,7 @@ main#Services .card {
   width: 300px;
   height: 500px;
 }
-@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px) {
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px), screen and (orientation: landscape) and (max-width: 810px) {
   main#Services .card {
     height: 520px;
   }
@@ -711,7 +711,7 @@ main#Projects {
   padding-top: 75px;
   justify-self: center;
 }
-@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px) {
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px), screen and (orientation: landscape) and (max-width: 810px) {
   main#Projects {
     grid-column-start: 1;
     grid-column-end: 4;
@@ -754,7 +754,7 @@ main#Projects .gallery__link {
   border: white 8px solid;
   border-radius: 3px;
 }
-@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px) {
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px), screen and (orientation: landscape) and (max-width: 810px) {
   main#Projects .gallery__link {
     max-width: 70vh;
     border: white 7px solid;
@@ -811,7 +811,7 @@ main#About {
     align-items: flex-start;
   }
 }
-@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px) {
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px), screen and (orientation: landscape) and (max-width: 810px) {
   main#About {
     grid-column: 1/4;
   }
@@ -842,7 +842,7 @@ main#About #Presentation p {
   font-family: "montserrat-semibold", sans-serif;
   font-size: 1.2em;
 }
-@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px) {
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px), screen and (orientation: landscape) and (max-width: 810px) {
   main#About #Presentation p {
     padding: 0 15px;
   }
@@ -931,7 +931,7 @@ main#Contact {
   /* Mark the active step: */
   /* Mark the steps that are finished and valid: */
 }
-@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px) {
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px), screen and (orientation: landscape) and (max-width: 810px) {
   main#Contact {
     grid-column-start: 1;
     grid-column-end: 4;
@@ -948,7 +948,7 @@ main#Contact form {
   min-width: 300px;
   max-width: 620px;
 }
-@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px) {
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px), screen and (orientation: landscape) and (max-width: 810px) {
   main#Contact form {
     padding: 5px;
   }
@@ -1085,7 +1085,7 @@ main#Contact .form-step h2 {
   font-size: 2.5em;
   line-height: 0.85em;
 }
-@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px) {
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px), screen and (orientation: landscape) and (max-width: 810px) {
   main#Contact .form-step h2 {
     font-size: 1.75em;
     line-height: 1.25em;
@@ -1103,7 +1103,7 @@ main#Contact .contact-details input[type=text],
 main#Contact .contact-details input[type=email] {
   width: 75%;
 }
-@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px) {
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px), screen and (orientation: landscape) and (max-width: 810px) {
   main#Contact .contact-details input[type=text],
   main#Contact .contact-details input[type=email] {
     width: 90%;
@@ -1213,7 +1213,7 @@ main#Contact button:after {
 main#Contact button:hover::after {
   left: 100%;
 }
-@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px) {
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px), screen and (orientation: landscape) and (max-width: 810px) {
   main#Contact #PreviousBtn {
     opacity: 0.75;
   }
@@ -1262,7 +1262,7 @@ main#Contact .d-none {
     padding-right: min(60px, 5vw);
   }
 }
-@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px) {
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px), screen and (orientation: landscape) and (max-width: 810px) {
   footer {
     position: relative;
     width: 100%;
@@ -1290,7 +1290,7 @@ footer ul {
     justify-content: center;
   }
 }
-@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px) {
+@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px), screen and (orientation: landscape) and (max-width: 810px) {
   footer ul {
     flex-direction: row;
     justify-content: center;

@@ -101,7 +101,8 @@ $break-big-screen: 1200px;
 @mixin for-mobile-only {
 
     @media screen and (orientation: portrait) and (max-width: $break-mobile-width),
-    screen and (orientation: landscape) and (max-height: $break-mobile-height) {
+    screen and (orientation: landscape) and (max-height: $break-mobile-height),
+    screen and (orientation: landscape) and (max-width: $break-mobile-width) {
         @content;
     }
 }
