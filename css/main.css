@@ -267,8 +267,6 @@ nav {
   nav ul li a.active {
     opacity: 50%;
   }
-}
-@media screen and (orientation: portrait) and (max-width: 810px), screen and (orientation: landscape) and (max-height: 700px), screen and (orientation: landscape) and (max-width: 810px) {
   nav ul #btnContact a {
     min-width: 160px;
     max-width: 160px;
@@ -476,7 +474,7 @@ main#Home #Showreel img {
   z-index: 1;
   opacity: 1;
   animation: 1.5s ease 0s normal forwards 1 fadeout;
-  animation-delay: 1.5s;
+  animation-delay: 0.5s;
 }
 main#Home #Showreel video {
   border-radius: 100%;
