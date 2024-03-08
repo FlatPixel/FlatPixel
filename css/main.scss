@@ -840,7 +840,7 @@ main#Services {
 
             h2 {
                 font-family: $font-big;
-                font-size: 1.75em;
+                font-size: 1.5em;
             }
 
             p {
@@ -882,6 +882,103 @@ main#Services {
 
                 .unity {
                     background-image: url("../images/services/icon_Unity.png");
+                }
+
+                .vrheadset {
+                    background-image: url("../images/services/icon_vr.png");
+                }
+
+                .phone {
+                    background-image: url("../images/services/icon_phone.png");
+                }
+
+                .controller {
+                    background-image: url("../images/services/icon_controller.png");
+                }
+
+                .eightwall {
+                    background-image: url("../images/services/icon_8thWall.png");
+                }
+
+                .lightship {
+                    background-image: url("../images/services/icon_lightShip.png");
+                }
+            }
+
+            .miniicons {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+
+                width: 50%;
+                min-height: 25px;
+
+                .icon {
+                    overflow: hidden;
+                    width: 100%;
+                    height: 100%;
+                    font-size: 0;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: center;
+                }
+
+                .instagram {
+                    background-image: url("../images/services/icon_insta.png");
+                }
+
+                .snapchat {
+                    background-image: url("../images/services/icon_snapChat.png");
+                }
+
+                .tiktok {
+                    background-image: url("../images/services/icon_tikTok.png");
+                }
+
+                .unity {
+                    background-image: url("../images/services/icon_Unity.png");
+                }
+
+                .meta {
+                    background-image: url("../images/services/icon_meta.png");
+                }
+
+                .controller {
+                    background-image: url("../images/services/icon_controller.png");
+                }
+                
+                .appstore {
+                    background-image: url("../images/services/icon_appstore.png");
+                }
+
+                .playstore {
+                    background-image: url("../images/services/icon_playstore.png");
+                }
+
+                .apple {
+                    background-image: url("../images/services/icon_apple.png");
+                }
+
+                .steam {
+                    background-image: url("../images/services/icon_steam.png");
+                }
+
+                .roblox {
+                    background-image: url("../images/services/icon_roblox.png");
+                }
+
+                .oculus {
+                    background-image: url("../images/services/icon_oculus.png");
+                }
+
+                .vrheadset {
+                    background-image: url("../images/services/icon_vr.png");
+                }
+
+                .phone {
+                    background-image: url("../images/services/icon_phone.png");
                 }
 
                 .eightwall {
@@ -1100,7 +1197,7 @@ main#About {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 15px;
+            column-gap: 50px;
             flex-wrap: wrap;
 
             li.award {
@@ -1134,6 +1231,11 @@ main#About {
             .lensathon {
                 background-size: contain;
                 background-image: url("../images/awards/award_lensathon.png");
+            }
+
+            .meta {
+                background-size: contain;
+                background-image: url("../images/awards/award_meta.png");
             }
         }
     }
@@ -1660,7 +1762,7 @@ footer {
 
     .twitter {
         background-size: contain;
-        background-image: url("../images/socials/twitter.png");
+        background-image: url("../images/socials/icon_x.png");
     }
 
     .snapchat {

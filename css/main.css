@@ -629,7 +629,7 @@ main#Services .card .inner {
 }
 main#Services .card .inner h2 {
   font-family: "montserrat-black", sans-serif;
-  font-size: 1.75em;
+  font-size: 1.5em;
 }
 main#Services .card .inner p {
   font-family: "montserrat-semibold", sans-serif;
@@ -665,10 +665,85 @@ main#Services .card .inner .icons .tiktok {
 main#Services .card .inner .icons .unity {
   background-image: url("../images/services/icon_Unity.png");
 }
+main#Services .card .inner .icons .vrheadset {
+  background-image: url("../images/services/icon_vr.png");
+}
+main#Services .card .inner .icons .phone {
+  background-image: url("../images/services/icon_phone.png");
+}
+main#Services .card .inner .icons .controller {
+  background-image: url("../images/services/icon_controller.png");
+}
 main#Services .card .inner .icons .eightwall {
   background-image: url("../images/services/icon_8thWall.png");
 }
 main#Services .card .inner .icons .lightship {
+  background-image: url("../images/services/icon_lightShip.png");
+}
+main#Services .card .inner .miniicons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 50%;
+  min-height: 25px;
+}
+main#Services .card .inner .miniicons .icon {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  font-size: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+main#Services .card .inner .miniicons .instagram {
+  background-image: url("../images/services/icon_insta.png");
+}
+main#Services .card .inner .miniicons .snapchat {
+  background-image: url("../images/services/icon_snapChat.png");
+}
+main#Services .card .inner .miniicons .tiktok {
+  background-image: url("../images/services/icon_tikTok.png");
+}
+main#Services .card .inner .miniicons .unity {
+  background-image: url("../images/services/icon_Unity.png");
+}
+main#Services .card .inner .miniicons .meta {
+  background-image: url("../images/services/icon_meta.png");
+}
+main#Services .card .inner .miniicons .controller {
+  background-image: url("../images/services/icon_controller.png");
+}
+main#Services .card .inner .miniicons .appstore {
+  background-image: url("../images/services/icon_appstore.png");
+}
+main#Services .card .inner .miniicons .playstore {
+  background-image: url("../images/services/icon_playstore.png");
+}
+main#Services .card .inner .miniicons .apple {
+  background-image: url("../images/services/icon_apple.png");
+}
+main#Services .card .inner .miniicons .steam {
+  background-image: url("../images/services/icon_steam.png");
+}
+main#Services .card .inner .miniicons .roblox {
+  background-image: url("../images/services/icon_roblox.png");
+}
+main#Services .card .inner .miniicons .oculus {
+  background-image: url("../images/services/icon_oculus.png");
+}
+main#Services .card .inner .miniicons .vrheadset {
+  background-image: url("../images/services/icon_vr.png");
+}
+main#Services .card .inner .miniicons .phone {
+  background-image: url("../images/services/icon_phone.png");
+}
+main#Services .card .inner .miniicons .eightwall {
+  background-image: url("../images/services/icon_8thWall.png");
+}
+main#Services .card .inner .miniicons .lightship {
   background-image: url("../images/services/icon_lightShip.png");
 }
 main#Services .card * {
@@ -854,7 +929,8 @@ main#About #Presentation ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 15px;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
   flex-wrap: wrap;
 }
 main#About #Presentation ul li.award {
@@ -882,6 +958,10 @@ main#About #Presentation ul .kidchoice {
 main#About #Presentation ul .lensathon {
   background-size: contain;
   background-image: url("../images/awards/award_lensathon.png");
+}
+main#About #Presentation ul .meta {
+  background-size: contain;
+  background-image: url("../images/awards/award_meta.png");
 }
 main#About #TeamPhoto {
   display: flex;
@@ -1331,7 +1411,7 @@ footer .linkedin {
 }
 footer .twitter {
   background-size: contain;
-  background-image: url("../images/socials/twitter.png");
+  background-image: url("../images/socials/icon_x.png");
 }
 footer .snapchat {
   background-size: contain;
